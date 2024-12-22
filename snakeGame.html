@@ -5,8 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Snake Game</title>
   <link rel="styleSheet" href="styles/snakeGame.css">
+  <link rel="styleSheet" href="styles/sidebar.css">
 </head>
 <body>
+
+  <div id="side-bar-container"> 
+    <div id="game-title">Snake Game</div>
+    <div id="difficulty-message">Please choose difficulty before starting</div>
+    <button id="start-game">Start Game</button>
+    <div id="difficulty-title">Choose difficulty</div>
+    <button speed="75" class="options option1">Easy</button>
+    <button speed="50" class="options option2">Normal</button>
+    <button speed="40" class="options option3">Hard</button>
+  </div>
   
   <div id="game-container">
     <canvas id="game-board" width="500" height="500"></canvas>

@@ -1,0 +1,96 @@
+#side-bar-container {
+  position: fixed;
+  display: inline;
+  left: 0;
+  top: 0;
+  background-color: black; 
+  width: 300px; 
+  height: 100%; 
+  color: white; 
+  font-family: monospace; 
+  padding: 200px 20px 20px 20px;
+}
+
+#game-title {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 40px;
+}
+
+#start-game {
+  font-size: 30px;
+  border: 3px solid white; 
+  background-color: black;
+  color: white; 
+  border-radius: 10px; 
+  padding: 10px;
+  letter-spacing: 5px; 
+  margin-bottom: 20px; 
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s ease, transform 0.2s ease; 
+  margin-left: 30px;
+}
+
+#start-game:hover {
+  background-color: rgb(34, 34, 34);
+  transform: scale(1.05);
+}
+
+#difficulty-title {
+  font-size: 24px;
+  letter-spacing: 3px; 
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.options{
+  font-size: 15px;
+  border: 2px solid white; 
+  background-color: black;
+  color: white;
+  border-radius: 8px;
+  margin-bottom: 15px; 
+  cursor: pointer;
+  padding: 10px;
+  letter-spacing: 1px;
+  width: 90px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.option1 {
+  color: green;
+  border-color: green;
+}
+
+.option1:active {
+  color: black;
+  background-color: green;
+}
+
+.option2 {
+  color: orange;
+  border-color: orange;
+}
+
+.option2:active {
+  color: black;
+  background-color: orange;
+}
+
+.option3 {
+  color: red;
+  border-color: red;
+}
+
+.option3:active {
+  color: black;
+  background-color: red;
+}
+
+#difficulty-message  {
+  margin-bottom: 5px;
+  text-align: center;
+  opacity: 0;
+}
+
