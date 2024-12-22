@@ -1,0 +1,44 @@
+#game-container {
+  text-align: center;
+  font-family: monospace;
+}
+
+#game-board {
+  border: 3px solid;
+}
+
+#score-counter-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+
+#score-box {
+  width: 75px;
+  height: 75px;
+  background-color: red;
+}
+
+#score {
+  font-size: 100px;
+}
+
+#record-box {
+  width: 75px;
+  height: 75px;
+  background-color: gold;
+}
+
+#record {
+  font-size: 100px;
+}
+
+#reset-game {
+  border: 3px solid red;
+  padding: 10px;
+  font-family: monospace;
+  font-size: 25px;
+  border-radius: 20px;
+  cursor: pointer;
+}
