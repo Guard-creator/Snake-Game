@@ -88,9 +88,13 @@
   background-color: red;
 }
 
-#difficulty-message  {
+.difficulty-message  {
   margin-bottom: 5px;
   text-align: center;
   opacity: 0;
+}
+
+.is-message-visible {
+  opacity: 1;
 }
 

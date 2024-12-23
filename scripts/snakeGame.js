@@ -1,3 +1,5 @@
+import { speed } from "./sideBar.js";
+
 const gameBoard = document.querySelector('#game-board');
 const scoreText = document.querySelector('#score');
 const recordText = document.querySelector('#record');
@@ -11,7 +13,10 @@ const snakeColor = 'lightgreen';
 const snakeBorder = 'black';
 const unitSize = 25;
 
-let running =  false;
+// exporting this because to avoid choose difficulty in mid game
+export let running =  false;
+// to avoid not to reset game when page loaded
+let whenResetGame = false;
 let nextTimeOutId;
 let score = 0;
 let record = JSON.parse(localStorage.getItem('record')) || 0;
@@ -35,11 +40,10 @@ window.addEventListener('keydown', (event) => {
 
 resetBtn.addEventListener('click', resetGame);
 
-startingGame();
-
-function startingGame() {
+export function startingGame() {
 
   running = true;
+  whenResetGame = true;
   scoreText.textContent = score;
   recordText.textContent = record;
   createFood();
@@ -58,7 +62,7 @@ function nextTick() {
       drawSnake();
       checkGameOver();
       nextTick();
-    }, 75)
+    }, speed)
   } else {
     displayGameOver();
   }
@@ -194,7 +198,25 @@ function displayGameOver() {
 
 };
 
+/*
+  i separete the reset snake and score so i can 
+  also reset when we lose then change the speed then
+  start game it reset game and score first then play game
+  otherwise the game gets some error.
+*/
+
 function resetGame() {
+
+  if(!whenResetGame) return;
+
+  whenResetGame = false;
+
+  resetSnake();
+  startingGame();
+
+};
+
+export function resetSnake() {
 
   score = 0;
   scoreText.textContent = score;
@@ -209,9 +231,10 @@ function resetGame() {
   ]
   running = true;
   clearTimeout(nextTimeOutId);
-  startingGame();
 
-};
+}
+
+// save to record in localstorage
 
 function saveRecord() {
 
